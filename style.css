@@ -1,0 +1,47 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    background-color: rgb(184, 174, 174);
+    padding: 10px;
+}
+
+/* Padding the labels the label correctly */
+label[for="first_name"] {
+    padding-right: 72px;
+}
+label[for="last_name"] {
+    padding-right: 74px;
+}
+label[for="email_address"] {
+    padding-right: 49px;
+}
+label[for="telephone"] {
+    padding-right: 32px;
+}
+label[for="comments"] {
+    padding-right: 77px;
+}
+
+.bar {
+    margin: 10px;
+}
+
+input {
+    width: 100px;
+}

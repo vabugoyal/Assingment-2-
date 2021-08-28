@@ -10,9 +10,13 @@ require_once __DIR__ . '/vendor/phpmailer/src/SMTP.php';
 // Getting the input value from the form 
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
-$email_address = $_POST["email_address"];
+$sender_email_address = $_POST["sender_email_address"];
+$sender_password = $_POST["sender_password"];
+$reciever_email_address = $_POST["reciever_email_address"];
+$reciever_name = $_POST["reciever_name"];
 $telephone = $_POST["telephone"];
 $comments = $_POST["comments"];
+$title = $_POST["title"];
 
 
 // passing true in constructor enables exceptions in PHPMailer
@@ -27,19 +31,19 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = 'b20140@students.iitmandi.ac.in'; // YOUR gmail email
-    $mail->Password = '2#aAbBzvk'; // YOUR gmail password
+    $mail->Username = sender_email_address; // YOUR gmail email
+    $mail->Password = sender_password; // YOUR gmail password
 
     // Sender and recipient settings
-    $mail->setFrom('b20140@students.iitmandi.ac.in', 'Vaibhav');
-    $mail->addAddress("vaibhavgoyalop@gmail.com", 'Name');
+    $mail->setFrom(sender_email_address, first_name + " " + last_name);
+    $mail->addAddress(reciever_email_address, reciever_name);
     
 
     // Setting the email content
     $mail->IsHTML(true);
-    $mail->Subject = "Send email using Gmail SMTP and PHPMailer";
-    $mail->Body = 'HTML message body. <b>Gmail</b> SMTP email body.';
-    $mail->AltBody = 'Plain text message body for non-HTML email client. Gmail SMTP email body.';
+    $mail->Subject = title;
+    $mail->Body = comments;
+    $mail->AltBody = comments;
 
     $mail->send();
     echo "Email message sent.";

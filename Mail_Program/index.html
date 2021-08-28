@@ -18,6 +18,7 @@
     <div class="main">
         <div class="form">
             <form action="myphp.php" method="POST">
+                <h4>Sender Details</h4>
                 <div class="bar">
                     <label for="first_name">First Name * </label>
                     <input type="text" id="first_name" name="first_name">
@@ -26,16 +27,39 @@
                     <label for="last_name">Last Name * </label>
                     <input type="text" id="last_name" name="last_name">
                 </div>
+                
                 <div class="bar">
-                    <label for="email_address">Email Address * </label>
-                    <input type="text" id="email_address" name="email_address">
+                    <label for="sender_email_address"> Email Address * </label>
+                    <input type="text" id="sender_email_address" name="sender_email_address">
+                </div>
+
+                <div class="bar">
+                    <label for="sender_password"> Password * </label>
+                    <input type="password" id="sender_password" name="sender_password">
                 </div>
                 <div class="bar">
                     <label for="telephone">Telephone Number </label>
                     <input type="text" id="telephone" name="telephone">
                 </div>
+                <br>
+                <h4>Reciver Details</h4>
                 <div class="bar">
-                    <label for="comments">Comments* </label>
+                    <label for="reciver_name">Name * </label>
+                    <input type="text" id="reciver_name" name="reciver_name">
+                </div>
+                <div class="bar">
+                    <label for="reciever_email_address">Reciever Email Address * </label>
+                    <input type="text" id="reciever_email_address" name="reciever_email_address">
+                </div>
+
+                <br>
+                <h4>Mail Message</h4>
+                <div class="bar">
+                    <label for="title">Title* </label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="bar">
+                    <label for="comments">Body* </label>
                     <textarea id="comments" name="comments" name="comments"></textarea>
                 </div>
                 <div id="submit"><button type="submit" id="send"> Send</button></div>

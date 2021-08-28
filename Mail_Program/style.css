@@ -22,26 +22,10 @@ h1 {
     padding: 10px;
 }
 
-/* Padding the labels the label correctly */
-label[for="first_name"] {
-    padding-right: 72px;
-}
-label[for="last_name"] {
-    padding-right: 74px;
-}
-label[for="email_address"] {
-    padding-right: 49px;
-}
-label[for="telephone"] {
-    padding-right: 32px;
-}
-label[for="comments"] {
-    padding-right: 77px;
-    vertical-align: top;
-}
+textarea {
+    width: 466px;
+    height: 150px;
 
-.bar {
-    margin: 10px;
 }
 
 input {
@@ -49,11 +33,47 @@ input {
     height: 20px;   
 }
 
-textarea {
-    width: 500px;
-    height: 150px;
-
+.bar {
+    margin: 10px;
 }
+
+
+/* Padding the labels the label correctly */
+label[for="first_name"] {
+    padding-right: 102px;
+}
+label[for="last_name"] {
+    padding-right: 104px;
+}
+label[for="sender_email_address"] {
+    padding-right: 78px;
+}
+label[for="sender_password"] {
+    padding-right: 112px;
+}
+label[for="reciever_email_address"] {
+    padding-right: 17px;
+}
+label[for="reciver_name"] {
+    padding-right: 134px;
+}
+label[for="telephone"] {
+    padding-right: 62px;
+}
+label[for="comments"] {
+    padding-right: 140px;
+    vertical-align: top;
+}
+label[for="title"] {
+    padding-right: 146px;
+    vertical-align: top;
+}
+
+ #title {
+    width: 465px;
+}
+
+
 
 #submit {
     display: flex;

@@ -8,6 +8,7 @@ require_once __DIR__ . '/vendor/phpmailer/src/PHPMailer.php';
 require_once __DIR__ . '/vendor/phpmailer/src/SMTP.php';
 
 // Getting the input value from the form 
+
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
 $sender_email_address = $_POST["sender_email_address"];
@@ -27,23 +28,22 @@ try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
+    $mail->SMTPAuth = false;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = sender_email_address; // YOUR gmail email
-    $mail->Password = sender_password; // YOUR gmail password
+    $mail->Username = $sender_email_address; // YOUR gmail email
+    $mail->Password = $sender_password; // YOUR gmail password
 
     // Sender and recipient settings
-    $mail->setFrom(sender_email_address, first_name + " " + last_name);
-    $mail->addAddress(reciever_email_address, reciever_name);
-    
+    $mail->setFrom($sender_email_address, $first_name);
+    $mail->addAddress($reciever_email_address, $reciever_name);
 
     // Setting the email content
     $mail->IsHTML(true);
-    $mail->Subject = title;
-    $mail->Body = comments;
-    $mail->AltBody = comments;
+    $mail->Subject = $title;
+    $mail->Body = $comments;
+    $mail->AltBody = $comments;
 
     $mail->send();
     echo "Email message sent.";
